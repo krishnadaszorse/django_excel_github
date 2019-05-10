@@ -1,0 +1,13 @@
+Django==1.9
+PIL==1.1.7
+PyGithub==1.43.7
+PyJWT==1.7.1
+argparse==1.2.1
+certifi==2019.3.9
+chardet==3.0.4
+idna==2.8
+requests==2.21.0
+urllib3==1.24.3
+wrapt==1.11.1
+wsgiref==0.1.2
+xlrd==1.2.0

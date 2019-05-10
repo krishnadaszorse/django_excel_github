@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Option3 | Assessment</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark static-top">
+				 
+				<a class="navbar-brand" href="{% url 'home' %}">Option3</a>
+			</nav>
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="{% url 'home' %}">Home</a>
+				</li>
+				<li class="nav-item dropdown ml-md-auto">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Excel App</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="{% url 'get_file' %}">Upload Excel</a> <a class="dropdown-item" href="{% url 'all_files' %}">Excel Files</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown ml-md-auto">
+					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">GitHub App</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="{% url 'github_user' %}">Search User</a>
+					</div>
+				</li>
+			</ul>
+			{% if form.attachment.errors %}
+			<div class="alert alert-dismissable alert-danger">
+				 
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+					×
+				</button>
+				<h4>
+					Alert!
+				</h4> <strong>Warning!</strong> {{ form.attachment.errors }}
+			</div>
+			{% endif %}
+			<div class="jumbotron">
+				<h2>
+					Excel App!
+				</h2>
+				<p>
+					This is a app to get all the data from excel file and show as html table. Please upload the excelfileand get the data from it.
+				</p>
+				<form name="FileForm" method="post" action='.' enctype="multipart/form-data">{% csrf_token %}
+						<div class="form-group">
+							 
+							<label for="exampleInputFile">
+								File input
+							</label>
+							<input class="form-control-file" id="exampleInputFile" type="file" name="attachment">
+							<p class="help-block">
+								Example block-level help text here.
+							</p>
+							{{ form.attachment.errors }}
+						</div>
+						<button type="submit" class="btn btn-primary">
+							Submit
+						</button>
+					</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/scripts.js"></script>
+  </body>
+</html>
